@@ -4,6 +4,7 @@ import com.google.inject.Inject;
 import fr.nedjar.vigiechiro.audio.AudioView;
 import java.nio.file.Path;
 import java.time.format.DateTimeFormatter;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
@@ -57,6 +58,14 @@ public class QualificationController {
     //
     // 1. Colonnes (cell value factory) : horodatage (HH:mm), fréquence (%.1f kHz),
     // durée (en s), statut.
+    colHorodatage.setCellValueFactory(
+        c -> new SimpleStringProperty(String.valueOf(c.getValue().getHorodatage())));
+    colFrequence.setCellValueFactory(
+        c -> new SimpleStringProperty(String.valueOf(c.getValue().getFrequenceDominanteKHz())));
+    colDuree.setCellValueFactory(
+        c -> new SimpleStringProperty(String.valueOf(c.getValue().getDureeSecondes())));
+    colStatut.setCellValueFactory(
+        c -> new SimpleStringProperty(String.valueOf(c.getValue().getStatut())));
     // 2. tableSequences.setItems(viewModel.sequencesProperty());
     tableSequences.setItems(viewModel.sequencesProperty());
     // 3. Relayer la sélection : viewModel.sequenceSelectionneeProperty()
