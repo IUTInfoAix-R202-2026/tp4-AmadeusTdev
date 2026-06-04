@@ -7,7 +7,6 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.testfx.api.FxRobot;
@@ -76,7 +75,7 @@ class QualificationControllerTest {
     assertThat(choix.getItems()).containsExactly("OK", "Douteux", "À jeter");
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   @SuppressWarnings("unchecked")
   void enregistrer_un_verdict_via_la_vue_met_a_jour_le_libelle(FxRobot robot) {

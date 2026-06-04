@@ -73,7 +73,7 @@ public class QualificationController {
     // 7. choiceVerdict : items = viewModel.listeVerdicts(), valeur <->
     // verdictSaisiProperty.
     choiceVerdict.getItems().setAll(viewModel.listeVerdicts());
-    choiceVerdict.valueProperty().bind(viewModel.verdictSaisiProperty());
+    choiceVerdict.valueProperty().bindBidirectional(viewModel.verdictSaisiProperty());
     // 8. labelVerdictGlobal <- verdictGlobalLibelleProperty.
     labelVerdictGlobal.textProperty().bind(viewModel.verdictGlobalLibelleProperty());
   }
